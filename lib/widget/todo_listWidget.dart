@@ -22,11 +22,10 @@ class TodoListWidget extends StatelessWidget {
         : ListView.separated(
             physics:
                 BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
-            padding: EdgeInsets.all(12),
-            separatorBuilder: (BuildContext context, int index) =>
-                Divider(height: 1, color: Theme.of(context).primaryColor),
+            padding: EdgeInsets.all(16),
+            separatorBuilder: (context, index) => Container(height: 8),
             itemCount: todos.length,
-            itemBuilder: (BuildContext context, int index) {
+            itemBuilder: (context, index) {
               final todo = todos[index];
               return TodoWidget(todo: todo);
             },
